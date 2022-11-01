@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #283752;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+#root {
+    width: 50%;
+    margin: auto;
+    margin-top: 64px;
+}
+
+span[contentEditable=true] {
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+span[contentEditable=true]:hover {
+    background: #00000021;
+}
+
+span[contentEditable=true]:focus {
+    background: #5476b1;
+}
+
+.card {
+    border-radius: 8px;
+    padding: 8px 32px;
+    position: relative;
+    margin-top: 16px;
+}
+
+.card:hover {
+    background: #00000021;
+    transform: skew(1deg, 1deg) scale(1.05);
+    /* box-shadow: -4px 4px #242844; */
+}
+
+.card h2 {
+    display: inline-block;
+    font-size: 5em;
+    color: #00000021;
+    margin: 0;
+}
+
+.card div {
+    display: inline-block;
+    margin-left: 16px;
+}
+
+.card button {
+    position: absolute;
+    margin: 16px 16px 16px 0;
+    padding: 0 8px;
+    height: calc(100% - 32px);
+    right: 0;
+    top: 0;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    background: transparent;
+    font-weight: 800;
+    color: #0000003d;
+    font-size: 1.2em;
+    padding: 0 8px;
+}
+
+.card button:hover {
+    background: #00000021;
+}
+
+.card .filled {
+    background: white;
+    color: hotpink;
+}
