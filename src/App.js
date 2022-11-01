@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import SongCard from "./Components/SongCard"
+import { SongCard } from "./Components"
+import { LikeButton } from "./Components"
 import './style.css'
 
 const App = () => {
@@ -7,11 +8,6 @@ const App = () => {
     const songs = require('./data.json').songs
 
     const [numSongs, setNumSongs] = useState(5)
-
-    function updateNumSongs(e){
-      setNumSongs(e.target.value)
-      document.title = `Top ${e.target.value} songs`
-    }
 
     function changeNum(e){
       e.preventDefault()
@@ -33,11 +29,12 @@ const App = () => {
 
           }
       }
+
+      document.title = `Top ${numSongs} songs`
     }
 
     return (
       <>
-        {/* <input type='number' defaultValue={numSongs} min='1' max='20' onChange={updateNumSongs}/> */}
         <h1>Top <span contentEditable={true} suppressContentEditableWarning={true} onKeyDown={changeNum}>{numSongs}</span> Songs</h1>
         <div>
           {
@@ -46,6 +43,7 @@ const App = () => {
             ))
           }
         </div>
+        <LikeButton />
       </>
     )
 }
