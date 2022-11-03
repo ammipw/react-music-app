@@ -9,7 +9,7 @@ const SongCard = ({song, rank}) => {
                 <h3>{song.title}</h3>
                 <p>{song.artist} | {song.year}</p>
             </div>
-            <LikeButton />
+            <LikeButton id={rank-1}/>
         </div>
     )
 }

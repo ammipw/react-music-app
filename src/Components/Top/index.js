@@ -1,13 +1,15 @@
-import React from "react"
+import React, {useContext} from "react"
 import {useSelector, useDispatch} from 'react-redux'
 import SongCard from '../SongCard'
 import { increase, decrease } from "../../actions"
+import { SongContext } from "../../SongContext"
 
 export default function Top() {
 
-    const songs = require('../../data.json').songs
-    
-    const numSongs = useSelector(state => {console.log("@@@@@@@@", state.num)
+    // const songs = require('../../data.json').songs
+    const [songs, setSongs] = useContext(SongContext)
+
+    const numSongs = useSelector(state => {
       return state.num
     })
     const dispatch = useDispatch();
