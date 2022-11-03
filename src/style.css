@@ -50,6 +50,10 @@ span[contentEditable=true]:focus {
     margin: 0;
 }
 
+h1{
+    text-align: center;
+}
+
 .card div {
     display: inline-block;
     margin-left: 16px;
