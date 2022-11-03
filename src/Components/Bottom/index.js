@@ -1,20 +1,27 @@
-import React, { useState } from "react"
+import React from "react"
+import {useSelector, useDispatch} from 'react-redux'
 import SongCard from '../SongCard'
+import { increase, decrease } from "../../actions"
 
 export default function Bottom() {
   const songs = require('../../data.json').songs
   console.log(songs.length)
-    const [numSongs, setNumSongs] = useState(5)
+
+  const numSongs = useSelector(state => {
+    return state.num
+  })
+  const dispatch = useDispatch();
+
     function changeNum(e){
       e.preventDefault()
       // console.log(e.key)
 
       switch(e.key){
         case 'ArrowUp':
-          setNumSongs(n => n + (n < songs.length ? 1 : 0))
+          dispatch(increase())
           break
         case 'ArrowDown':
-          setNumSongs(n => n - (n > 0 ? 1 : 0))
+          dispatch(decrease())
           break
         case 'Backspace':
           break

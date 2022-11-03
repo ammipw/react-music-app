@@ -8,6 +8,16 @@ ul {
     text-decoration: none;
 }
 
+a:visited:not(.current){
+    color: white;
+}
+
 .current {
     color: rgb(105, 255, 230);
 }
+
+.foot{
+    text-align: center;
+}
+
+
